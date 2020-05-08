@@ -4,7 +4,7 @@ from telegram_util import cnWordCount
 
 def check(link):
 	try:
-		content = cached_url.get(link, force_cache = True, sleep = 1)
+		content = cached_url.get(link, force_cache = True)
 	except:
 		return False
 	soup = readee.export(link, content = content)

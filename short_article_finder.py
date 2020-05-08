@@ -26,10 +26,10 @@ while pool.pool:
 				print(link)
 				if not existing.add(link):
 					continue
-				post = link
-				if len(link) > 20:
-					post = '[link](%s)' % link
-				debug_group.send_message(post, parse_mode='Markdown')
 				os.system('open %s -g' % link)
+				# post = link
+				# if len(link) > 20:
+				# 	post = '[link](%s)' % link
+				# debug_group.send_message(post, parse_mode='Markdown')
 		next_pos = getNextPos(name, pos)
 		pool.update(name, next_pos)
