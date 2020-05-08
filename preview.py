@@ -8,6 +8,7 @@ def getSoup(name, pos):
 
 def getNextPos(name, pos):
 	soup = getSoup(name, pos)
+	next_pos = pos
 	for item in soup.find_all('div', class_='tgme_widget_message'):
 		next_pos = int(item.get('data-post', '').split('/')[-1]) + 1
 	return next_pos

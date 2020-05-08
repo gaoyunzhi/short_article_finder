@@ -10,3 +10,6 @@ class Pool():
 		if self.pool[name] == pos:
 			del self.pool[name]
 		self.pool[name] = pos
+
+	def items(self):
+		return [(x, self.pool[x]) for x in self.pool]
