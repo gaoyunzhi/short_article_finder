@@ -8,6 +8,7 @@ from checker import check
 import yaml
 from telegram.ext import Updater
 from existing import Existing
+import os
 
 existing = Existing()
 
@@ -29,5 +30,6 @@ while pool.pool:
 				if len(link) > 20:
 					post = '[link](%s)' % link
 				debug_group.send_message(post, parse_mode='Markdown')
+				os.system('open %s -g' % link)
 		next_pos = getNextPos(name, pos)
 		pool.update(name, next_pos)
