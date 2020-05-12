@@ -1,8 +1,11 @@
 from bs4 import BeautifulSoup
 import cached_url
 
+def getRootUrl(name, pos):
+	return 'https://t.me/s/%s/%d' % (name, pos)
+
 def getSoup(name, pos):
-	url = 'https://t.me/s/%s/%d' % (name, pos)
+	url = getRootUrl(name, pos)
 	content = cached_url.get(url, force_cache = True)
 	return BeautifulSoup(content, 'html.parser')
 
